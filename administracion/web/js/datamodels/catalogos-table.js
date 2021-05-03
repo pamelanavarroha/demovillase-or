@@ -66,7 +66,7 @@ function getPacientes() {
         ["Azucena Aguas Garcia", "29", "aag@gmail.com", "Ortodoncia", "17/05/2019", "23/05/2021", 850, 24, 0, 23900, 0],
         ["Julio Moises Miranda", "42", "jmm@gmail.com", "Ortodoncia", "14/01/2017", "18/03/2019", 2500, 15, 2, 27500, 5000],
         ["Romeo Juarez Robles", "29", "rjr@gmail.com", "Ortodoncia", "05/09/2021", "05/11/2023", 1000, 20, 18, 30000, 18000],
-        ["Silvia Ruiz Robles", "23", "srr@gmail.com", "Ortodoncia", "15/12/2015", "01/06/2017", 1000, 15, 0, 30000, 0],
+        ["Susana Parra Carranza", "33", "spc@gmail.com", "Ortodoncia", "15/12/2015", "01/06/2017", 1000, 15, 0, 30000, 0],
         ["Rubén Gutierrez Mendoza", "38", "fgm@gmail.com", "Ortodoncia", "03/08/2019", "23/06/2022", 1500, 10, 18, 20000, 3000],
         ["Azucena Aguas Garcia", "29", "aag@gmail.com", "Ortodoncia", "17/05/2019", "23/05/2021", 850, 24, 0, 23900, 0],
         ["Julio Moises Miranda", "42", "jmm@gmail.com", "Ortodoncia", "14/01/2017", "18/03/2019", 2500, 15, 2, 27500, 5000],
