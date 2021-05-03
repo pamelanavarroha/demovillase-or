@@ -29,7 +29,7 @@
                                             <img class="uk-border-circle" width="40" height="40" src="${pageContext.request.contextPath}/img/pacientes.png">
                                         </div>
                                         <div class="uk-width-auto">
-                                            <p class="uk-margin-remove-top uk-text-bold uk-margin-remove-bottom">Mi Personal</p>
+                                            <p class="uk-margin-remove-top uk-text-bold uk-margin-remove-bottom">Nuestros Pacientes</p>
                                             <p id="nombreCompleto-header" name="nombreCompleto-header" class="uk-text-meta uk-margin-remove-top"></p>
                                         </div>
                                     </div>
@@ -66,7 +66,7 @@
                 <div id="modal-mostrar-mensualidades" uk-modal bg-close='false' keyboard='false' uk-open>
                     <div class="uk-modal-dialog uk-margin-auto-vertical uk-modal-body" uk-overflow-auto>
                         <p class="uk-text-center uk-text-bold">
-                            Detalle de Mensualidades
+                            Información del Paciente
                         </p>
                         <div class="uk-text-center uk-text-bold">
                             <a id="sendsolicitud"  name="sendsolicitud" class="uk-button uk-button-primary"  onclick="autorizarSolicitud(4, 2);" >Autorizar</a>
