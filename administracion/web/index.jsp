@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/uikit.min.css"/>
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/jquery.dataTables.min.css"/>    
         <link href="${pageContext.request.contextPath}/css/buttons.dataTables.css" rel="stylesheet" type="text/css" />
-        <title>JSP Page</title>
+        <title>Clinica Villaseñor</title>
     </head>
     <body>
         <jsp:include page="/nav/nav.jsp"/>
@@ -70,7 +70,7 @@
                         </p>
                         <div class="uk-text-center uk-text-bold">
                             <a id="sendsolicitud"  name="sendsolicitud" class="uk-button uk-button-primary"  onclick="autorizarSolicitud(4, 2);" >Autorizar</a>
-                            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancelar</button>
                         </div>
                     </div>
                 </div>
