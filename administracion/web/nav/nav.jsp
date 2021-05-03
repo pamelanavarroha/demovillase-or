@@ -59,7 +59,7 @@
                 </a>
                 <div id="sidenav" uk-offcanvas="mode: slide">
                     <div class="uk-offcanvas-bar">
-                        <h2 class="uk-h2 uk-text-light">Ortodoncia y Odontología Integral Villaseñor</h2>
+                        <h2 class="uk-h2 uk-text-light"> Ortodoncia y Odontología Integral Villaseñor </h2>
                         <ul class="uk-nav uk-nav-parent-icon" uk-nav>                            
                             <li><a class="uk-text-primary  uk-text-bold" href="${pageContext.request.contextPath}/newrequest">
                                     <span class="uk-margin-small-right uk-icon" uk-icon="icon: plus-circle"></span>Pagos</a></li>
