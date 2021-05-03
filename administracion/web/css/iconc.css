@@ -1,0 +1,79 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 5/03/2020, 12:33:58 PM
+    Author     : dzmau3t
+*/
+
+.span[uk-icon=*] svg{
+    color:black;
+}
+
+.span[uk-icon=*] svg path{
+    fill: green;
+}
+
+.icon-statusg > svg[data-svg=info] * {
+    stroke-width: 2;
+    color: #00C853;
+}
+
+/* Value 1 - NOK*/
+.icon-statusy > svg[data-svg=info] * {
+    stroke-width: 2;
+    color: #FFEB3B;
+    
+}
+
+/* Value 14 - Warning */
+.icon-statusr > svg[data-svg=info] * {
+    stroke-width: 2;
+    color: #D50000;
+}
+
+/* Value 15 - Stop */
+/*.icon-status > svg[data-svg=ban] * {
+    stroke-width: 2.5;
+    color: #000000;
+}*/
+
+/* Value 16 - Error */
+.icon-status > svg[data-svg=minus-circle] * {
+    stroke-width: 2;
+    color: #D32F2F;
+}
+
+/* Value 127 - Question */
+.icon-status > svg[data-svg=question] * {
+    stroke-width: 2;
+    color: #3F51B5;
+}
+
+/* Value 255 - Redflag */
+.icon-status > svg[data-svg=tag] * {
+    stroke-width: 2;
+    color: #D84315;
+}
+
+
+
+.icon-head > svg[data-svg=*]  * {
+    stroke-width: 2;
+    color:  yellow !important;
+}
+
+
+.icon-head[uk-icon=*] svg path{
+    fill: green;
+}
+
+.uk-icon[uk-icon="icon:home"] svg {
+    color: black;
+}
+
+.uk-icon[uk-icon="icon:home"] svg polygon{
+    fill: yellow;
+}
