@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/uikit.min.css"/>
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/jquery.dataTables.min.css"/>    
         <link href="${pageContext.request.contextPath}/css/buttons.dataTables.css" rel="stylesheet" type="text/css" />
-        <title>Clinica Villaseñor</title>
+        <title>Clinica Ortodoncia y Odontología Integral Villaseñor</title>
     </head>
     <body>
         <jsp:include page="/nav/nav.jsp"/>
