@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/uikit.min.css"/>
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/jquery.dataTables.min.css"/>    
         <link href="${pageContext.request.contextPath}/css/buttons.dataTables.css" rel="stylesheet" type="text/css" />
-        <title>JSP Page</title>
+        <title>Clinica Ortodoncia y Odontología Integral Villaseñor</title>
     </head>
     <body>
         <jsp:include page="/nav/nav.jsp"/>
@@ -29,10 +29,58 @@
                                             <img class="uk-border-circle" width="40" height="40" src="${pageContext.request.contextPath}/img/pacientes.png">
                                         </div>
                                         <div class="uk-width-auto">
-                                            <p class="uk-margin-remove-top uk-text-bold uk-margin-remove-bottom">Mi Personal</p>
+                                            <p class="uk-margin-remove-top uk-text-bold uk-margin-remove-bottom">Nuestros Pacientes</p>
                                             <p id="nombreCompleto-header" name="nombreCompleto-header" class="uk-text-meta uk-margin-remove-top"></p>
                                         </div>
-                                    </div>
+                                            <div class="uk-navbar-right">
+                                                <button href="${pageContext.request.contextPath}/newrequest" class="uk-button uk-icon" uk-icon="icon: plus-circle" uk-toggle="target: #modal-agregar-paciente">Agregar Paciente</button>
+                                            </div>
+                                            <div id="modal-agregar-paciente" class="uk-modal-container" uk-modal>
+                                                <div class="uk-modal-dialog uk-modal-body">
+                                                    <form class="uk-form-stacked">
+
+                                                        <div class="uk-margin">
+                                                            <h3> Datos del Paciente </h3>
+                                                            <label class="uk-form-label" for="form-stacked-text">Nombre completo:</label>
+                                                            <div class="uk-form-controls">
+                                                                <input class="uk-input" id="form-stacked-text" type="text" placeholder="Escribe el nombre del paciente">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="uk-margin">
+                                                            <label class="uk-form-label" for="form-stacked-select">Edad:</label>
+                                                            <div class="uk-form-controls">
+                                                                <input class="uk-input" id="form-stacked-text" type="text" placeholder="Edad del paciente">
+                                                            </div>
+                                                        <div>
+                                                            <label class="uk-form-label" for="form-stacked-select">Tratamiento</label>
+                                                            <div class="uk-form-controls">
+                                                                <select class="uk-select" id="form-stacked-select">
+                                                                    <option>Seleccionar tratamiento</option>
+                                                                    <option>Ortodoncia</option>
+                                                                    <option>Limpieza</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                    <div>
+                                                        <label class="uk-form-label" for="form-stacked-select">Fecha de inicio:</label>
+                                                        <form class="uk-form">
+                                                            <input type="text" data-uk-datepicker="{format:'DD.MM.YYYY'}">
+                                                        </form>
+                                                    </div>
+                                                    <div>
+                                                        <label class="uk-form-label" for="form-stacked-text">Mensualidad:</label>
+                                                            <div class="uk-form-controls">
+                                                            <input class="uk-input" id="form-stacked-text" type="text" placeholder="Cantidad que abona el paciente">
+                                                            </div>
+                                                    </div>
+                                                    <div>
+                                                        <button class="uk-modal-close" type="button">Añadir cliente</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                 </div>
                                 <div class="uk-card-body uk-padding-remove-top">
                                     <table id="listaPacientes" class="display uk-animation-slide-right compact" style="width:100%">
@@ -66,11 +114,11 @@
                 <div id="modal-mostrar-mensualidades" uk-modal bg-close='false' keyboard='false' uk-open>
                     <div class="uk-modal-dialog uk-margin-auto-vertical uk-modal-body" uk-overflow-auto>
                         <p class="uk-text-center uk-text-bold">
-                            Detalle de Mensualidades
+                            Información del Paciente
                         </p>
                         <div class="uk-text-center uk-text-bold">
                             <a id="sendsolicitud"  name="sendsolicitud" class="uk-button uk-button-primary"  onclick="autorizarSolicitud(4, 2);" >Autorizar</a>
-                            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancelar</button>
                         </div>
                     </div>
                 </div>
