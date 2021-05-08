@@ -12,239 +12,196 @@
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/uikit.min.css"/>
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/jquery.dataTables.min.css"/>    
         <link href="${pageContext.request.contextPath}/css/buttons.dataTables.css" rel="stylesheet" type="text/css" />
+
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/daterangepicker.css" />
         <title>Clinica Ortodoncia y Odontología Integral Villaseñor</title>
     </head>
     <body>
         <jsp:include page="/nav/nav.jsp"/>
-          <div uk-grid>
+        <div uk-grid>
             <input type="hidden" id="path" name="path" value="${pageContext.request.contextPath}"/>
             <input type="hidden" id="vartest" name="vartest" value="${proyecto_json}"/>
-            <div class="uk-width-1-2">
-                <h1 class="uk-text-muted uk-text-small uk-text-bold uk-text-center">Registro HDT</h1>
-                <!-- Search Form -->
-                <form name="mainForm" id="mainForm"   data-step="1" data-intro="Formulario de registro de HDT"
-                      class="uk-grid-small uk-card uk-card-body uk-box-shadow-large uk-width-5-6 uk-width-3-4 uk-margin-auto uk-animation-slide-left uk-form uk-background-default" uk-grid>
-
-                    <legend class="uk-legend uk-margin-small-bottom">Nueva HDT<span uk-icon="plus-circle"></span></legend>   
-                    <input type="hidden" id="user" name="user" value="${pageContext.request.remoteUser}" />
-                    <input type="hidden" name="cmd" value="newhdt" />
-
-                    <div class="uk-width-1-3 " data-step="3" data-intro="Indique el proyecto para el que la HDT fue adquirida, si no se despliega la opción deseada reporte con el administrador del sistema">
-                        <label class="uk-form-label" for="proycompra">Proyecto Compra</label>
-                        <div class="uk-form-controls" data-step="2" data-intro="Indique el proy">
-                            <select name="proycompra" class="uk-select" id="proycompra"></select>
-                        </div>
-                    </div>
-
-                    <div class="uk-width-1-3" data-step="4" data-intro="El nombre lógico de la HDT debe ser único">
-                        <label class="uk-form-label" for="nologico">Nombre Lógico</label>
-                        <label class="uk-form-label uk-text-danger" for="nologico">*</label>
-                        <div class="uk-form-controls">
-                            <input type="text" name="nologico" maxlength="100" class="uk-input" id="nologico">
-                        </div>
-                    </div>
-                    <div class="uk-width-1-3" data-step="5" data-intro="El nombre físico es el nombre que se marca en la HDT">
-                        <label class="uk-form-label" for="nofisico">Nombre Físico</label>
-                        <label class="uk-form-label uk-text-danger" for="nofisico">*</label>
-                        <div class="uk-form-controls">
-                            <input type="text" name="nofisico" maxlength="100" class="uk-input" id="nofisico">
-                        </div>
-                    </div>
-                    <div class="uk-width-1-3" data-step="6" data-intro="El número de serie de la HDT debe ser único">
-                        <label class="uk-form-label" for="noserie">No Serie</label>
-                        <label class="uk-form-label uk-text-danger" for="noserie">*</label>
-                        <div class="uk-form-controls">
-                            <input type="text" name="noserie" maxlength="100" class="uk-input" id="noserie">
-                        </div>
-                    </div>
-                    <!--                    <div class="uk-width-1-3" data-step="7" data-intro="Sí la IP no aparece en el listado puede ser que esté asignada a otra HDT o no esté registrada. 
-             En el primer caso busque la ip en la tabla de la derecha y asigne otra a la HDT que la tenga asignada ">
-            <label class="uk-form-label" for="ip">IP</label>
-            <div class="uk-form-controls">
-                <select name="ips" class="uk-select" id="ips"></select>
-            </div>
-        </div>-->
-                    <input type="hidden"  name="ip-param" id="ip-param"/>
-                    <!--<div  data-step="5" data-intro="Si la IP ya pertenece a otra HDT considere hacer el intercambio" class="uk-width-1-3 uk-grid" uk-grid name="ip-control">-->
-
-                    <div class="uk-width-1-3" >
-                        <label class="uk-form-label" data-step="7" data-intro="Debe seleccionar una dirección IP de la tabla que se despliega al dar clic en el ícono ... " for="ip">Seleccionar IP<a uk-toggle="target: #modal-ip" class="uk-icon-link uk-icon-justify uk-margin-auto uk-text-success" uk-icon="more"></a></label>
-                        <input type="text" name="ip" maxlength="15" class="uk-input" id="ip" placeholder="IP" readonly="">
-                    </div>
-
-                    <!--</div>-->
-
-                    <div class="uk-width-1-3">
-                        <label class="uk-form-label" for="fabricante">Fabricante</label>
-                        <div class="uk-form-controls" data-step="8" data-intro="Indique el fabricante" >
-                            <input type="text" name="fabricante" maxlength="100" class="uk-input" id="fabricante">
-                        </div>
-                    </div>
-                    <div class="uk-width-1-3">
-                        <label class="uk-form-label" for="so">Sistema Operativo</label>
-                        <div class="uk-form-controls" data-step="9" data-intro="Indique el Sistema Operativo de la HDT" >
-                            <input type="text" name="so" maxlength="100" class="uk-input" id="so">
-                        </div>
-                    </div>
-                    <div class="uk-width-1-3">
-                        <label class="uk-form-label" for="modelo">Modelo</label>
-                        <div class="uk-form-controls" data-step="10" data-intro="Indique el modelo de la HDT" >
-                            <input type="text" name="modelo" maxlength="100" class="uk-input" id="modelo">
-                        </div>
-                    </div>
-                    <legend class="uk-legend uk-margin-small-bottom"  >Actualizar Ubicación<span uk-icon="pencil"></span></legend>
-
-                    <!-- Hidden Inputs -->
-                    <input type="hidden" name="user" value="${pageContext.request.remoteUser}" />
 
 
-                    <div class="uk-width-1-4" data-step="11" data-intro="Se debe especificar la ubicación inicial. El resto de los campos se activarán de acuerdo a su elección">
-                        <label class="uk-form-label"  for="new-ubicacion">Ubicación</label>
-                        <div class="uk-form-controls">
-                            <select name="new-ubicacion" class="uk-select" id="new-ubicacion"></select>
-                        </div>
-                    </div>
-                    <div class="uk-width-1-4">
-                        <label class="uk-form-label" for="nave">Segmento</label>
-                        <div class="uk-form-controls">
-                            <select name="nave" class="uk-select" id="nave"></select>
-                        </div>
-                    </div>
-                    <div class="uk-width-1-4">
-                        <label class="uk-form-label" for="gerencia">Gerencia</label>
-                        <div class="uk-form-controls">
-                            <select name="gerencia" class="uk-select" id="gerencia"></select>
-                        </div>
-                    </div>
-                    <div class="uk-width-1-4">
-                        <label class="uk-form-label" for="nave">Proceso</label>
-                        <div class="uk-form-controls">
-                            <select name="proceso" class="uk-select" id="proceso"></select>
-                        </div>
-                    </div>
-                    <div class="uk-width-1-3" data-step="12" data-intro="Indica el tipo de operación para el que se usará la HDT (solo en caso de que la ubicación sea 'Productivo'">
-                        <label class="uk-form-label" for="funcion">Función</label>
-                        <div class="uk-form-controls">
-                            <select name="funcion" class="uk-select" id="funcion"></select>
-                        </div>
-                    </div>
-                    <div class="uk-width-2-3">
-                        <label class="uk-form-label" for="comentarios-ubic">Comentarios</label>
-                        <div class="uk-margin">
-                            <textarea class="uk-textarea" name="comentarios-ubic" id="comentarios-ubic"rows="3" placeholder="Comentarios"></textarea>
-                        </div>
-                    </div>
+            <div class="uk-width-1-3@l uk-width-1-2@m uk-width-1-1@s uk-card uk-card-body   uk-padding-remove-right "  data-step="2" data-intro="Permite personalizar busquedas y modificaciones en la agenda">
+                <div class="uk-container uk-container-expand uk-card-default uk-card-body">
 
-                    <div class="uk-width-1-3 uk-margin-auto uk-" data-step="13" data-intro="Al dar clic en Registrar el equipo quedará dado de alta y se mostrará en la tabla de la derecha" >
-                        <a id="save"  name="save" class="uk-button uk-button-primary" onclick="submitDataNewHDT();" >Registrar</a>
-                        <!--<a id="save"  name="save" class="uk-button uk-button-primary" onclick="abortreq();" >Refresh</a>-->
-                    </div>
-                </form>
-            </div>
-            <div id="modal-ip" uk-modal class="uk-modal-container">
-                <div class="uk-modal-dialog uk-modal-body">
-                    <h2 class="uk-modal-title">Seleccionar IP</h2>
-                    <div class="uk-width-1-1">
-                        <table id="forIP" class="display uk-animation-slide-left compact" style="width:100%">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>IP</th>
-                                    <th>HDT actual</th>
-                                    <th>Disponible</th>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
+                    <form class="uk-form-stacked uk-form  uk-padding-remove-top  uk-animation-slide-left uk-background-default  uk-grid   uk-child-width-auto@m" uk-grid="">
+                        <!--                        <div class="uk-width-1-1">
+                                                    <p class="uk-margin-remove-top uk-text-bold uk-margin-remove-bottom">Buscar en la agenda</p>
+                                                </div>-->
+                        <div class="uk-card-header uk-padding-remove-top uk-width-1-1">
+                            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                                <div class="uk-width-auto">
+                                    <img width="40" height="40" src="${pageContext.request.contextPath}/img/calendar-search.png">
+                                </div>
+                                <div class="uk-width-auto">
+                                    <p class="uk-margin-remove-top uk-text-bold uk-margin-remove-bottom">Buscar en Agenda</p>
+                                    <p id="nombreCompleto-header" name="nombreCompleto-header" class="uk-text-meta uk-margin-remove-top"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-first-column">
+                            <div class="uk-margin">
 
-                    <p class="uk-text-right">
-                        <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-                        <button class="uk-button uk-button-primary" type="button">Save</button>
-                    </p>
+                                <span class="uk-form-label">Buscar por paciente</span>
+                                <div class="uk-inline">
+                                    <span class="uk-form-icon uk-icon" uk-icon="icon: user"></span>
+                                    <input id="paciente-busqueda" class="uk-input uk-form-width-medium" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="uk-margin">  
+                                <span class="uk-form-label">Buscar por Fecha</span>
+                                <div class="uk-inline">
+                                    <span class="uk-form-icon uk-icon" uk-icon="icon: calendar"></span>
+                                    <input id="fecha-busqueda" type="text" id="ddesde" name="ddesde"class=" uk-input"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--                        <div class="uk-width-1-1">
+                                                    <p class="uk-margin-remove-top uk-text-bold uk-margin-remove-bottom">Agendar Cita</p>
+                                                </div>-->
+                        <div class="uk-card-header uk-padding-remove-top uk-width-1-1">
+                            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                                <div class="uk-width-auto">
+                                    <img width="40" height="40" src="${pageContext.request.contextPath}/img/calendar-plus.png">
+                                </div>
+                                <div class="uk-width-auto">
+                                    <p class="uk-margin-remove-top uk-text-bold uk-margin-remove-bottom">Agendar Cita</p>
+                                    <p id="nombreCompleto-header" name="nombreCompleto-header" class="uk-text-meta uk-margin-remove-top"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-first-column">
+                            <div class="uk-margin">
+
+                                <span class="uk-form-label">Seleccionar paciente</span>
+                                <div class="uk-inline">
+                                    <span class="uk-form-icon uk-icon" uk-icon="icon: user"></span>
+                                    <input class="uk-input uk-form-width-medium" required="true" id="paciente-agendar" type="text">
+                                    <button class="uk-button uk-text-bold" type="button" uk-toggle="target: #modal-mostrar-pacientes" >Buscar</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-first-column">
+                            <div class="uk-margin">
+
+                                <span class="uk-form-label">Seleccionar Doctor</span>
+                                <div class="uk-inline">
+                                    <!--<span class="uk-form-icon uk-icon" uk-icon="icon: user"></span>-->
+                                    <!--<input class="uk-input uk-form-width-medium" type="text">-->
+                                    <select class="uk-form-width-medium uk-select">
+                                        <option class="">Natalia Villaseñor</option>
+                                        <option class="">Luis Angel Villaseñor</option>
+                                        <option class="">Luis Eduardo Villaseñor</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="uk-margin">  
+                                <span class="uk-form-label">Seleccionar Fecha</span>
+                                <div class="uk-inline">
+                                    <span class="uk-form-icon uk-icon" uk-icon="icon: calendar"></span>
+                                    <input type="text" id="ddesde" name="ddesde"class=" uk-input uk-form-width-medium"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="uk-margin">
+
+                                <span class="uk-form-label">Seleccionar Hora</span>
+                                <div class="uk-inline">
+                                    <!--<span class="uk-form-icon uk-icon" uk-icon="icon: user"></span>-->
+                                    <!--<input class="uk-input uk-form-width-medium" type="text">-->
+                                    <select class="uk-form-width-medium uk-select">
+                                        <option class="">11:00 - 11:30</option>
+                                        <option class="">11:30 - 12:00</option>
+                                        <option class="">12:00 - 12:30</option>
+                                        <option class="">12:30 - 13:00</option>
+                                        <option class="">16:00 - 16:30</option> 
+                                    </select>
+                                </div>
+                            <a id="sendsolicitud"  name="sendsolicitud" class="uk-button uk-button-primary"  onclick="modalConfirmaAgenda();" >Agendar</a>                            
+                        
+                            </div>
+                        </div>
+
+                      
+                    </form>
+
+
+
+
                 </div>
             </div>
-            <div class="uk-width-1-2  uk-card uk-card-body"  data-step="2" data-intro="Muestra las HDT registradas en sistema">
-                <div class="uk-card uk-width-1-1 text-primary uk-text-bolder"><h2><span class="uk-text-background"> HDT Listado General</span></h2>                
-                </div>
-                <table id="newHDTs" class="display uk-animation-slide-left compact" style="width:100%">
-                    <thead>
-                        <tr>
-                            <th>Proyecto Compra</th>
-                            <th>Nombre Físico</th>
-                            <th>Nombre Lógico</th>
-                            <th>No Serie</th>
-                            <th>IP</th>
-                            <!--<th>SO</th>-->
-                            <th>Fabricante</th>
-                            <th>Modelo</th>
-                            <th>Ubicación</th>
-                            <th>Fallas</th>
-                            <th>Bandera*</th>
-                            <th>F. Registro</th>
-                        </tr>
-                    </thead>
-                </table> 
-            </div>
-        </div>
-        <div class="content-padder ">
-            <div class="uk-section-small">
+
+
+
+            <div class="uk-width-2-3@l uk-width-1-2@m uk-width-1-1@s  uk-card uk-card-body uk-padding-remove-left"  data-step="2" data-intro="Muestra las HDT registradas en sistema">
                 <div class="uk-container uk-container-expand">
 
                     <div uk-grid>
-                        <div class="uk-width-1-1@l uk-width-1-1@m uk-width-1-1@s">
+                        <div class="uk-width-1-1">
                             <div class="uk-card uk-card-default">
                                 <div class="uk-card-header uk-padding-remove-top">
                                     <div class="uk-grid-small uk-flex-middle" uk-grid>
                                         <div class="uk-width-auto">
-                                            <img class="uk-border-circle" width="40" height="40" src="${pageContext.request.contextPath}/img/pacientes.png">
+                                            <img width="40" height="40" src="${pageContext.request.contextPath}/img/agenda2.png">
                                         </div>
                                         <div class="uk-width-auto">
-                                            <p class="uk-margin-remove-top uk-text-bold uk-margin-remove-bottom">Nuestros Pacientes</p>
+                                            <p class="uk-margin-remove-top uk-text-bold uk-margin-remove-bottom">Agenda</p>
                                             <p id="nombreCompleto-header" name="nombreCompleto-header" class="uk-text-meta uk-margin-remove-top"></p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="uk-card-body uk-padding-remove-top">
-                                    <table id="listaPacientes" class="display uk-animation-slide-right compact" style="width:100%">
+                                <hr class="uk-divider-icon">
+
+                                <div class="uk-card-body uk-grid uk-padding-remove-top uk-width-1-1uk-grid-small uk-grid-match uk-child-width-expand@s">
+                                    <span class="uk-margin-remove-top uk-text-bold uk-margin-remove-bottom">Busqueda por<label id="etiqueta-busqueda" class="uk-inline uk-text-primary"></label></span>
+                                    <table id="listaAgenda" class="display uk-animation-slide-right compact" style="width:100%">
                                         <thead>
-<!--                                            <tr>
-                                                <th colspan="3">Información Personal</th>
-                                                <th style="border-bottom:none;" colspan="3"></th>
-                                                <th colspan="5">Pagos</th>
-                                            </tr>-->
                                             <tr>
-                                                <th>Nombre</th>
-                                                <th>Edad</th>
-                                                <th>email</th> 
-                                                <th>Tratamiento</th>
-                                                <th>Fecha Inicio</th>
-                                                <th>Fecha Cierre</th>
-                                                <th>Mensualidad</th>
-                                                <th># Mens Cubiertas</th>
-                                                <th># Mens pendientes</th>
-                                                <th>Monto Cubierto</th>
-                                                <th>Monto Pendiente</th>
+                                                <th>#</th>
+                                                <th>Fecha</th>
+                                                <th>Horario</th>
+                                                <th>Paciente</th>
+                                                <th>Atención</th>
                                             </tr>
                                         </thead>
-                                    </table>
+                                    </table>                                   
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
 
-                <div id="modal-mostrar-mensualidades" uk-modal bg-close='false' keyboard='false' uk-open>
-                    <div class="uk-modal-dialog uk-margin-auto-vertical uk-modal-body" uk-overflow-auto>
-                        <p class="uk-text-center uk-text-bold">
-                            Información del Paciente
-                        </p>
-                        <div class="uk-text-center uk-text-bold">
-                            <a id="sendsolicitud"  name="sendsolicitud" class="uk-button uk-button-primary"  onclick="autorizarSolicitud(4, 2);" >Autorizar</a>
-                            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancelar</button>
-                        </div>
-                    </div>
-                </div>
-                <input type="hidden" id="path" name="path" value="${pageContext.request.contextPath}"/>                              
+
+
+        <div id="modal-mostrar-pacientes" uk-modal bg-close='false' keyboard='false' uk-open>
+            <div class="uk-modal-dialog uk-margin-auto-vertical uk-modal-body" uk-overflow-auto>
+                <p class="uk-text-center uk-text-bold">
+                    Información del Paciente
+                </p>
+                <table id="listaPacientesModal" class="display uk-animation-slide-right compact" style="width:100%">
+                    <thead>
+                        <!--                                            <tr>
+                                                                        <th colspan="3">Información Personal</th>
+                                                                        <th style="border-bottom:none;" colspan="3"></th>
+                                                                        <th colspan="5">Pagos</th>
+                                                                    </tr>-->
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Edad</th>
+                            <th>email</th>
+                        </tr>
+                    </thead>
+                </table>
             </div>
         </div>
 
@@ -255,11 +212,47 @@
 
         <script src="${pageContext.request.contextPath}/js/jquery.dataTables.min.js"></script>        
         <script src="${pageContext.request.contextPath}/js/datamodels/catalogos-table.js"></script>   
+        <script type="text/javascript" src="${pageContext.request.contextPath}/js/moment.min.js"></script>
+        <script type="text/javascript" src="${pageContext.request.contextPath}/js/daterangepicker.min.js"></script>
+        <script type="text/javascript" src="${pageContext.request.contextPath}/js/datepicker-c.js"></script>
+
+
+
+
         <script>
 
-                                    $(document).ready(function () {
-                                        llenarTablaPacientes();
-                                    });
+                                        $(document).ready(function () {
+                                            llenarTablaAgenda();
+                                            llenarTablaPacientesModal();
+                                            datePickerInit();
+
+                                            $("#etiqueta-busqueda").html("Fecha: 10/05/2021");
+                                            $('#fecha-busqueda').bind("enterKey", function (e) {
+                                                //do stuff here
+                                                $("#etiqueta-busqueda").html("Fecha: 26/05/2021");
+                                                llenarTablaAgenda2();
+
+                                            });
+                                            $('#fecha-busqueda').keyup(function (e) {
+                                                if (e.keyCode == 13)
+                                                {
+                                                    $(this).trigger("enterKey");
+                                                }
+                                            });
+
+                                            $('#paciente-busqueda').bind("enterKey", function (e) {
+                                                //do stuff here
+                                                $("#etiqueta-busqueda").html("Paciente: Azucena Aguas García");
+                                                llenarTablaAgendaPaciente()();
+
+                                            });
+                                            $('#paciente-busqueda').keyup(function (e) {
+                                                if (e.keyCode == 13)
+                                                {
+                                                    $(this).trigger("enterKey");
+                                                }
+                                            });
+                                        });
         </script>
     </body>
 </html>

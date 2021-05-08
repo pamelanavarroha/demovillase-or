@@ -32,64 +32,16 @@
                                             <p class="uk-margin-remove-top uk-text-bold uk-margin-remove-bottom">Nuestros Pacientes</p>
                                             <p id="nombreCompleto-header" name="nombreCompleto-header" class="uk-text-meta uk-margin-remove-top"></p>
                                         </div>
-                                            <div class="uk-navbar-right">
-                                                <button href="${pageContext.request.contextPath}/newrequest" class="uk-button uk-icon" uk-icon="icon: plus-circle" uk-toggle="target: #modal-agregar-paciente">Agregar Paciente</button>
-                                            </div>
-                                            <div id="modal-agregar-paciente" class="uk-modal-container" uk-modal>
-                                                <div class="uk-modal-dialog uk-modal-body">
-                                                    <form class="uk-form-stacked">
-
-                                                        <div class="uk-margin">
-                                                            <h3> Datos del Paciente </h3>
-                                                            <label class="uk-form-label" for="form-stacked-text">Nombre completo:</label>
-                                                            <div class="uk-form-controls">
-                                                                <input class="uk-input" id="form-stacked-text" type="text" placeholder="Escribe el nombre del paciente">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="uk-margin">
-                                                            <label class="uk-form-label" for="form-stacked-select">Edad:</label>
-                                                            <div class="uk-form-controls">
-                                                                <input class="uk-input" id="form-stacked-text" type="text" placeholder="Edad del paciente">
-                                                            </div>
-                                                        <div>
-                                                            <label class="uk-form-label" for="form-stacked-select">Tratamiento</label>
-                                                            <div class="uk-form-controls">
-                                                                <select class="uk-select" id="form-stacked-select">
-                                                                    <option>Seleccionar tratamiento</option>
-                                                                    <option>Ortodoncia</option>
-                                                                    <option>Limpieza</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </form>
-                                                    <div>
-                                                        <label class="uk-form-label" for="form-stacked-select">Fecha de inicio:</label>
-                                                        <form class="uk-form">
-                                                            <input type="text" data-uk-datepicker="{format:'DD.MM.YYYY'}">
-                                                        </form>
-                                                    </div>
-                                                    <div>
-                                                        <label class="uk-form-label" for="form-stacked-text">Mensualidad:</label>
-                                                            <div class="uk-form-controls">
-                                                            <input class="uk-input" id="form-stacked-text" type="text" placeholder="Cantidad que abona el paciente">
-                                                            </div>
-                                                    </div>
-                                                    <div>
-                                                        <button class="uk-modal-close" type="button">Añadir cliente</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    </div>
                                 </div>
                                 <div class="uk-card-body uk-padding-remove-top">
                                     <table id="listaPacientes" class="display uk-animation-slide-right compact" style="width:100%">
                                         <thead>
-<!--                                            <tr>
-                                                <th colspan="3">Información Personal</th>
-                                                <th style="border-bottom:none;" colspan="3"></th>
-                                                <th colspan="5">Pagos</th>
-                                            </tr>-->
+                                            <!--                                            <tr>
+                                                                                            <th colspan="3">Información Personal</th>
+                                                                                            <th style="border-bottom:none;" colspan="3"></th>
+                                                                                            <th colspan="5">Pagos</th>
+                                                                                        </tr>-->
                                             <tr>
                                                 <th>Nombre</th>
                                                 <th>Edad</th>
@@ -116,9 +68,9 @@
                         <p class="uk-text-center uk-text-bold">
                             Información del Paciente
                         </p>
-                        <div class="uk-text-center uk-text-bold">
-                            <a id="sendsolicitud"  name="sendsolicitud" class="uk-button uk-button-primary"  onclick="autorizarSolicitud(4, 2);" >Autorizar</a>
-                            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancelar</button>
+                        <div  data-step="5" data-intro="Seleccionar el periodo durante el cual este usuario debe ser válido. "  class=" uk-padding-remove-bottom uk-margin-remove-bottom">
+                            <label class="uk-form-label" for="ddesde">Periodo de validez</label>
+                            <input type="text" id="ddesde" name="ddesde"class=" uk-input"/>
                         </div>
                     </div>
                 </div>
@@ -135,9 +87,9 @@
         <script src="${pageContext.request.contextPath}/js/datamodels/catalogos-table.js"></script>   
         <script>
 
-                                    $(document).ready(function () {
-                                        llenarTablaPacientes();
-                                    });
+            $(document).ready(function () {
+                llenarTablaPacientes();
+            });
         </script>
     </body>
 </html>

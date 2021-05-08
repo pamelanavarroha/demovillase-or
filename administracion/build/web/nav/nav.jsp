@@ -30,7 +30,7 @@
                                 <ul class="uk-navbar-nav">
                                     <li><a class="uk-text-menu-element  uk-text-bold" href="${pageContext.request.contextPath}/newrequest">
                                             <span class="uk-margin-small-right uk-icon" uk-icon="icon: plus-circle"></span>Pagos</a></li>
-                                    <li><a class="uk-text-menu-element    uk-text-bold" href="${pageContext.request.contextPath}/newrequest">
+                                    <li><a class="uk-text-menu-element    uk-text-bold" href="${pageContext.request.contextPath}/agenda/agenda.jsp">
                                             <span class="uk-margin-small-right uk-icon" uk-icon="icon: plus-circle"></span>Agenda</a></li>
                                     <li><a class="uk-text-menu-element    uk-text-bold" href="${pageContext.request.contextPath}/newrequest">
                                             <span class="uk-margin-small-right uk-icon" uk-icon="icon: plus-circle"></span>Expedientes</a></li>
@@ -80,7 +80,7 @@
             </div>
             <div class="uk-navbar-center uk-width-1-4 uk-align-center">        
                 <span class="uk-navbar-item uk-logo uk-align-center uk-text-bold uk-width-1-2" >
-                    <img  src="${pageContext.request.contextPath}/img/vwm2.png" />
+                    <img  src="${pageContext.request.contextPath}/img/logo.png" />
                 </span>
             </div>
         </nav>

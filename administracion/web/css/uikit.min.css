@@ -1616,12 +1616,18 @@ select.uk-form-width-xsmall {
     background: 0 0;
     color: #1e87f0
 }
+.uk-button-link-success {
+    padding: 0;
+    line-height: 1.5;
+    background: 0 0;
+    color: #388f42
+}
 
 .uk-button-link-villaseñor {
     padding: 0;
     line-height: 1.5;
     background: 0 0;
-    color: #952620
+    color: #642824
 }
 
 .uk-button-link:focus,
